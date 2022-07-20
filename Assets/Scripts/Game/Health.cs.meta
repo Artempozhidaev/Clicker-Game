@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: ce9ce9cf172d42e42bc64cb14f1fff39
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Health_bar: {fileID: 4841299275234113831, guid: 9b6ff5086b9caa94d97272f70b87d2db, type: 3}
+  - textmeshPro: {fileID: 6618831891096801799, guid: 2ea6cdb1ebfb974489b0ffa67680f6c7, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

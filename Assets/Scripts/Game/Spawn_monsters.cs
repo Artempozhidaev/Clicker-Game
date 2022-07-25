@@ -9,7 +9,7 @@ public class Spawn_monsters : MonoBehaviour
 
     private static float _timeLeft = 0f;
     public static bool _timerOn = false;
-
+    
     public GameObject Ghost_brown, Ghost_green, Ghost_violet, Ghost_white;
     public GameObject Rabit_clye, Rabit_green, Rabit_red, Rabit_Yellow;
     public GameObject Slime_blue, Slime_green, Slime_red, Slime_Yellow;

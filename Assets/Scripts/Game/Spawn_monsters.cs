@@ -5,32 +5,45 @@ using TMPro;
 
 public class Spawn_monsters : MonoBehaviour
 {
+    public static Spawn_monsters Instance { get; private set; }
+
     public float time_to_spawn;
 
     private static float _timeLeft = 0f;
     public static bool _timerOn = false;
+    [Header("Prefabs")]
+    [Space(5)]
+    public GameObject Ghost_brown;
+    public GameObject Ghost_green, Ghost_violet, Ghost_white;
+    [Space(5)]
+    public GameObject Rabit_clye;
+    public GameObject Rabit_green, Rabit_red, Rabit_Yellow;
+    [Space(5)]
+    public GameObject Slime_blue;
+    public GameObject Slime_green, Slime_red, Slime_Yellow;
+    [Space(5)]
+    public GameObject health_bar;
+    [Header("Scripts owners")]
     
-    public GameObject Ghost_brown, Ghost_green, Ghost_violet, Ghost_white;
-    public GameObject Rabit_clye, Rabit_green, Rabit_red, Rabit_Yellow;
-    public GameObject Slime_blue, Slime_green, Slime_red, Slime_Yellow;
+    [Space(5)]
+    public GameObject mobs;
+    public GameObject Blur, Tap_event, Busters_events;
+    [Header("Buttons")]
+    [Space(5)]
+    public GameObject button_freeze;
+    public GameObject button_kill, button_home;
+    [Header("TMPs")]
+    [Space(5)]
+    public GameObject TMP_Lost_gO;
+    public GameObject TMP_Player_Score_gO, TMP_Score_lost, TMP_Score_gO, TMP_Score_num_gO, button_save_record;
+    [Space(5)]
+    public TextMeshProUGUI TMP_Score_num;
+    public TextMeshProUGUI TMP_Player_Score;
 
-    public GameObject mobs, health_bar;
-
-    public GameObject Blur;
-
-    public GameObject Tap_event;
-    public GameObject Busters_events;
-
-    public GameObject button_freeze, button_kill, button_home;
-
-    public GameObject TMP_Lost_gO, TMP_Player_Score_gO, TMP_Score_lost, TMP_Score_gO, TMP_Score_num_gO, button_save_record;
-    public TextMeshProUGUI TMP_Score_num, TMP_Player_Score;
-
-
+    
     public static int HP = 1;
     public static int Monster_n = 0;
     public static int Score;
-
     public static int plus = 0;
 
     public static void Clear()
@@ -41,7 +54,10 @@ public class Spawn_monsters : MonoBehaviour
         _timeLeft = 0f;
         _timerOn = false;
     }
-
+    private void Awake()
+    {
+        Instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -184,8 +200,8 @@ public class Spawn_monsters : MonoBehaviour
         if (plus > 9)
         {
             HP++;
-            Monster_walk.Speed = Monster_walk.Speed * 1.05f;
-            time_to_spawn = time_to_spawn * 0.95f;
+            Monster_walk.Speed *=  1.05f;
+            time_to_spawn *= 0.95f;
             plus = 0;
         }
     }
@@ -203,6 +219,12 @@ public class Spawn_monsters : MonoBehaviour
             _timeLeft = time_to_spawn;
         }
             
+    }
+    public void MonsterDead()
+    {
+        Score++;
+        Monster_n--;
+        TMP_Score_num.text = Score.ToString();
     }
     void Lost_screen()
     {

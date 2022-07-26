@@ -13,3 +13,11 @@ The following packages were updated:
   com.unity.textmeshpro from version 3.0.4 to 3.0.6
   com.unity.timeline from version 1.5.4 to 1.6.4
   com.unity.visualscripting from version 1.5.2 to 1.7.8
+
+=== Tue Jul 26 05:17:46 2022
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.shadergraph@12.1.0

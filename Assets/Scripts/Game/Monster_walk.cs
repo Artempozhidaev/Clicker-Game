@@ -58,14 +58,14 @@ public class Monster_walk : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (walk == false)
-            MovementLogic(0);
+        if (!walk)
+            MovementLogic(false);
         else
-            MovementLogic(1);
+            MovementLogic(true);
     }
-    void MovementLogic(int forward)
+    void MovementLogic(bool forward)
     {
-        if (forward == 1)
+        if (forward)
         {
             if (WallRaycasts_forward() != Vector3.zero)
             {
@@ -83,7 +83,6 @@ public class Monster_walk : MonoBehaviour
             rb.velocity = (Speed * transform.forward);
         }
         else rb.velocity = Vector3.zero;
-
     }
 
     Vector3 WallRaycasts_forward()

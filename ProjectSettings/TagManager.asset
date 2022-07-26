@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Monster
+  - Wall_up
+  - Wall_left
+  - Wall_down
+  - Wall_right
+  - HealthBar
   layers:
   - Default
   - TransparentFX
